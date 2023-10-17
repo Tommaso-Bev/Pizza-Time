@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+
+    body {
+        background-color: #edeeef;
+    }
+
+    .all__recipe {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .all__recipe {
+            display: block;
+        }
+    }
+
+    hr {
+        color: #cfcfd1;
+        margin-left: 5%;
+        width: 300px;
+    }
+
+    #recipe__presentation {
+        overflow: hidden;
+        width: 30%;
+        background: url("https://joyfoodsunshine.com/wp-content/uploads/2018/09/easy-homemade-pizza-dough-recipe-2-1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    @media screen and (max-width: 1100px) {
+        #recipe__presentation {
+            width: 550px;
+        }
+    }
+
+    .circle__recipe {
+        background-color: #ff8000;
+        width: 80px;
+        height: 80px;
+        opacity: 0.8;
+        border-radius: 50%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        margin-left: 10px;
+        flex-direction: column;
+    }
+
+    .circle__recipe h2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .circle__recipe p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .description {
+        margin-bottom: 0;
+        background-color: rgba(28, 28, 28, 0.23);
+    }
+
+    .description h1 {
+        font-family: "Roboto", sans-serif;
+        margin-top: 40%;
+        padding-top: 20px;
+        padding-left: 10px;
+        color: #eaeae5;
+    }
+
+    .description p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        color: #eaeae5;
+        padding-left: 10px;
+        margin-top: 0;
+        word-wrap: break-word;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .description h1 {
+            font-size: 17px;
+            padding-top: 5px;
+        }
+    }
+
+    .content {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
+        width: 550px;
+    }
+
+    .tabs {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .tabs {
+            margin-top: 0;
+            padding-top: 10px;
+        }
+    }
+
+    .tabs li {
+        list-style: none;
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .tabs a {
+        text-decoration: none;
+        font-family: "Roboto";
+        color: #383838;
+        transition: 0.5s;
+    }
+
+    .tabs a:hover {
+        color: #fd7e50;
+    }
+
+    .tabs li .active {
+        border-bottom: 2px solid #fd7e50;
+        color: #fd7e50;
+    }
+
+    .tabcontent {
+        height: 85%;
+        animation: fadeEffect 1s;
+    }
+
+    .tabcontent p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        margin-left: 5%;
+        padding-right: 10px;
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .tabcontent h2 {
+        margin-left: 5%;
+        margin-bottom: 0;
+        font-family: "Roboto";
+        color: #636363;
+    }
+
+    .tabcontent ul {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        list-style-type: none;
+    }
+
+
+
+    .tabcontent a {
+        text-decoration: none;
+        margin-left: 5%;
+        color: #1369bf;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    #author img {
+        float: right;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-right: 3%;
+        padding-left: 7px;
+    }
+
+
+
+    .credits {
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        color: #686868;
+    }
+
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+<body>
+
+    <div class="all__recipe container-fluid">
+        <div id="recipe__presentation" class="">
+            <br>
+            <div class="circle__recipe">
+                <h2>Troppa</h2>
+                <p>Preparazione</p>
+            </div>
+            <div class="circle__recipe">
+                <h2 id="numPan">1</h2>
+                <p>Panetti</p>
+            </div>
+            <br>
+            <div class="description">
+                <h1 class="font-weight-bold">Impasto biga e autolisi</h1>
+                <p>L'impasto più lungo e difficile che voi abbiate mai visto.</p>
+                <br>
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <!-- Menu -->
+            <ul class="tabs">
+                <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'ingredients')"
+                       id="defaultOpen">Calcolatrice</a></li>
+                <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'method')">Recipe</a></li>
+            </ul>
+
+
+            <div id="ingredients" class="tabcontent">
+                <h1 class="font-weight-bold pl-5">Calcolatrice</h1>
+                <br>
+                    <div class="container-fluid">
+                        <div class="container row">
+                            <div class="col">
+                                <h4>Grammi Panetti</h4>
+                                <input style="accent-color: #f48e29;" type="range" min="250" max="320" value="300" id="gPan">
+                                <div id="val">300</div>
+                                <h4>Idratazione</h4>
+                                <input style="accent-color: #f6902b;" type="range" min="50" max="100" value="65" id="slider">
+                                <div id="value">65</div>
+                                <div id="fTotal"></div>
+                            </div>
+                            <div class="col">
+                                <h4>Numero dei Panetti</h4>
+                                <input type="number" id="NumeroPanetti" min="1" max="15" value="1">
+                            </div>
+                        </div>
+
+
+                        <table class="table font-weight-bold">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Biga</th>
+                                <th scope="col" class="col-8"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Farina (w<span>&#8805;</span>270)</th>
+                                <td id="farBiga"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Acqua</th>
+                                <td id="acqBiga"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lievito (di birra fresco)</th>
+                                <td id="lievBiga"></td>
+                            </tr>
+                            </tbody>
+
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Autolisi</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Farina</th>
+                                <td id="farIdrol"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Acqua</th>
+                                <td id="acqIdrol"></td>
+                            </tr>
+                            </tbody>
+                            <thead class="">
+                            <tr>
+                                <th scope="col" class="bg-dark text-white">Sale</th>
+                                <th scope="col" id="salt"></th>
+                            </tr>
+
+                            </tr>
+                            </thead>
+                            <thead class="">
+                            <tr>
+                                <th scope="col" class="bg-dark text-white">Acqua (fredda di frigorifero)</th>
+                                <th id="water"></th>
+                            </tr>
+
+                            </tr>
+                            </thead>
+                            <thead class="">
+                            <tr>
+                                <th scope="col" class="bg-dark text-white">Lievito (di birra fresco)</th>
+                                <th>1</th>
+                            </tr>
+
+                            </tr>
+                            </thead>
+                        </table>
+
+
+                    </div>
+            </div>
+
+            <div id="method" class="tabcontent">
+                <h1 class="font-weight-bold pl-5">Ricetta</h1>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const slider = document.getElementById("slider");
+    const hidr = document.getElementById("value");
+    const nPan = document.getElementById("NumeroPanetti");
+    const gPan = document.getElementById("gPan");
+    const gVal = document.getElementById("val");
+    const FTota = document.getElementById("fTotal");
+    const nDough= document.getElementById("numPan");
+
+
+    const fBiga = document.getElementById("farBiga");
+    const hBiga = document.getElementById("acqBiga");
+    const lBiga = document.getElementById("lievBiga");
+
+    const fAutol = document.getElementById("farIdrol");
+    const hAutol = document.getElementById("acqIdrol");
+
+    const salt = document.getElementById("salt");
+    const water = document.getElementById("water");
+
+    fTot();
+
+    gPan.addEventListener("input", () => {
+        gVal.textContent = gPan.value;
+        fTot()
+    })
+    slider.addEventListener("input", () => {
+        hidr.textContent = slider.value;
+        fTot()
+    })
+    nPan.addEventListener("input", () => {
+        if (nPan.value > 15)
+            nPan.value = 15;
+        if (nPan.value < 0)
+            nPan.value = 1;
+        nDough.textContent=nPan.value;
+        fTot()
+    })
+
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+
+    function fTot() {
+        const result = (nPan.value * gPan.value) / (1.025 + (slider.value / 100));
+        FTota.textContent = result.toString();
+        FTota.style.display = "none";
+        fBiga.textContent = Math.round(result / 2).toString();
+        hBiga.textContent = Math.round(result / 4).toString();
+        fAutol.textContent = Math.round(result / 2).toString();
+        hAutol.textContent = Math.round(result / 4).toString();
+        lBiga.textContent = (result * 0.005).toFixed(1).toString();
+        salt.textContent = Math.round(result * 0.02).toString();
+        water.textContent = Math.round(result * (slider.value / 100 - 0.5)).toString();
+    }
+</script>
+</html>
