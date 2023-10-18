@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+
+    body {
+        background-color: #edeeef;
+    }
+
+    .all__recipe {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .all__recipe {
+            display: block;
+        }
+    }
+
+    hr {
+        color: #cfcfd1;
+        margin-left: 5%;
+        width: 300px;
+    }
+
+    #recipe__presentation {
+        overflow: hidden;
+        width: 30%;
+        background: url("https://joyfoodsunshine.com/wp-content/uploads/2018/09/easy-homemade-pizza-dough-recipe-2-1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    @media screen and (max-width: 1100px) {
+        #recipe__presentation {
+            width: 550px;
+        }
+    }
+
+    .circle__recipe {
+        background-color: #ff8000;
+        width: 80px;
+        height: 80px;
+        opacity: 0.8;
+        border-radius: 50%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        margin-left: 10px;
+        flex-direction: column;
+    }
+
+    .circle__recipe h2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .circle__recipe p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .description {
+        margin-bottom: 0;
+        background-color: rgba(28, 28, 28, 0.23);
+    }
+
+    .description h1 {
+        font-family: "Roboto", sans-serif;
+        margin-top: 40%;
+        padding-top: 20px;
+        padding-left: 10px;
+        color: #eaeae5;
+    }
+
+    .description p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        color: #eaeae5;
+        padding-left: 10px;
+        margin-top: 0;
+        word-wrap: break-word;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .description h1 {
+            font-size: 17px;
+            padding-top: 5px;
+        }
+    }
+
+    .content {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
+        width: 550px;
+    }
+
+    .tabs {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .tabs {
+            margin-top: 0;
+            padding-top: 10px;
+        }
+    }
+
+    .tabs li {
+        list-style: none;
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .tabs a {
+        text-decoration: none;
+        font-family: "Roboto";
+        color: #383838;
+        transition: 0.5s;
+    }
+
+    .tabs a:hover {
+        color: #fd7e50;
+    }
+
+    .tabs li .active {
+        border-bottom: 2px solid #fd7e50;
+        color: #fd7e50;
+    }
+
+    .tabcontent {
+        height: 85%;
+        animation: fadeEffect 1s;
+    }
+
+    .tabcontent p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        margin-left: 5%;
+        padding-right: 10px;
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .tabcontent h2 {
+        margin-left: 5%;
+        margin-bottom: 0;
+        font-family: "Roboto";
+        color: #636363;
+    }
+
+    .tabcontent ul {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        list-style-type: none;
+    }
+
+
+    .tabcontent a {
+        text-decoration: none;
+        margin-left: 5%;
+        color: #1369bf;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    #author img {
+        float: right;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-right: 3%;
+        padding-left: 7px;
+    }
+
+
+    .credits {
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        color: #686868;
+    }
+
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+<body>
+
+<div class="all__recipe container-fluid">
+    <div id="recipe__presentation" class="">
+        <br>
+        <div class="circle__recipe">
+            <h2>2-3</h2>
+            <p>Giorni</p>
+        </div>
+        <div class="circle__recipe">
+            <h2 id="numPan">1</h2>
+            <p>Panetti</p>
+        </div>
+        <br>
+        <div class="description">
+            <h1 class="font-weight-bold">Impasto biga e autolisi</h1>
+            <p>L'impasto più lungo e difficile che voi abbiate mai visto.</p>
+            <br>
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <!-- Menu -->
+        <ul class="tabs">
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'ingredients')"
+                   id="defaultOpen">Calcolatrice</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'method')">Recipe</a></li>
+        </ul>
+
+
+        <div id="ingredients" class="tabcontent">
+            <h1 class="font-weight-bold pl-5">Calcolatrice</h1>
+            <br>
+            <div class="container-fluid">
+                <div class="container row">
+                    <div class="col">
+                        <h4>Grammi Panetti</h4>
+                        <input style="accent-color: #f48e29;" type="range" min="250" max="320" value="300" id="gPan">
+                        <div id="val">300</div>
+                        <h4>Idratazione</h4>
+                        <input style="accent-color: #f6902b;" type="range" min="50" max="100" value="65" id="slider">
+                        <div id="value">65</div>
+                        <div id="fTotal"></div>
+                    </div>
+                    <div class="col">
+                        <h4>Numero di Panetti</h4>
+                        <input type="number" id="NumeroPanetti" min="1" max="15" value="1">
+                    </div>
+                </div>
+
+
+                <table class="table font-weight-bold">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Biga</th>
+                        <th scope="col" class="col-8"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Farina (w<span>&#8805;</span>270)</th>
+                        <td class="farBiga"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Acqua</th>
+                        <td class="acqBiga"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lievito (di birra fresco)</th>
+                        <td class="lievBiga"></td>
+                    </tr>
+                    </tbody>
+
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Autolisi</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Farina</th>
+                        <td class="farIdrol"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Acqua</th>
+                        <td class="acqIdrol"></td>
+                    </tr>
+                    </tbody>
+                    <thead class="">
+                    <tr>
+                        <th scope="col" class="bg-dark text-white">Sale</th>
+                        <th scope="col" class="salt"></th>
+                    </tr>
+
+                    </tr>
+                    </thead>
+                    <thead class="">
+                    <tr>
+                        <th scope="col" class="bg-dark text-white">Acqua (fredda di frigorifero)</th>
+                        <th class="water"></th>
+                    </tr>
+
+                    </tr>
+                    </thead>
+                    <thead class="">
+                    <tr>
+                        <th scope="col" class="bg-dark text-white">Lievito (di birra fresco)</th>
+                        <th>1</th>
+                    </tr>
+
+                    </tr>
+                    </thead>
+                </table>
+
+
+            </div>
+        </div>
+
+        <div id="method" class="tabcontent pl-3 pr-3">
+            <h1 class="font-weight-bold pl-5">Ricetta</h1>
+            <h3>Preparazione della Biga</h3>
+            <div>Sciogliere <span class="lievBiga"></span>g di lievito in <span class="acqBiga"></span>g di acqua.
+                Unire a <span class="farBiga"></span>g di farina
+                e mescolare grossolanamente in modo da ottenere degli gnocchi di pasta. Idealmente dovrebbe essere
+                mescolata abbastanza da non risultare umida al tocco nè secca. Coprire e lasciare fermentare in
+                frigorifero per almeno 24h, massimo 48h.
+            </div>
+            <h3>Autolisi</h3>
+            <div>In tarda mattinata, lo stesso giorno della pizzata. Per preparare l'impasto a idrolisi, unire <span
+                    class="farIdrol"></span>g di farina e <span
+                    class="acqIdrol"></span>g di
+                acqua ed impastare fino ad ottenere un impasto omogeneo. L'impasto deve risultare omogeneo ma non
+                "chiuso" ovvero completamente impastato, in quanto questo procedimento avviene da solo durante il
+                riposo. Coprire e mettere in frigorifero per almeno 30 minuti.
+            </div>
+            <h3>Impasto finale</h3>
+            <div>Passati 30 minuti di riposo dell'impasto a idrolisi, tagliare a cubetti la biga (in modo da facilitare
+                il lavoro all'impastatrice) e aggiungere insieme all'impasto a idrolisi in planetaria e 1g di lievito
+                fresco per aiutare a fare ripartire la lievitazione (importante soprattutto se la biga ha fermentato a
+                lungo 48h+). Aggiungere <span class="water"></span>g di acqua (fredda di
+                frigorifero) in maniera graduale, a
+                macchinario in funzione (quasi goccia a goccia, altrimenti non si mescola). A 2/3 circa dell'acqua
+                aggiunta, unire anche <span class="salt"></span>g di sale e continuare ad aggiungere
+                lentamente la parte rimanente di
+                acqua. A impasto ultimato coprire e lasciare riposare.
+            </div>
+            <h3>Preparazione dei panetti</h3>
+            <div>La preparazione dei panetti deve avvenire 3 ore circa prima della pizzata: considerare che i tempi
+                variano a seconda della temperatura dell'ambiente, in estate la lievitazione è più veloce, quindi
+                bastano anche 2 ore, in inverno i tempi di lievitazione sono più lunghi e possono essere necessarie
+                anche 4 ore. Pesare e formare <span id="np"></span> panetti da <span
+                        id="pv"></span>g l'uno. La superficie deve
+                risultare liscia. Mettere a riposare coperti (idealmente in una cassetta per lievitazione
+                precedentemente unta con dell'olio in modo da facilitare poi il distacco).
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    const slider = document.getElementById("slider");
+    const hidr = document.getElementById("value");
+    const nPan = document.getElementById("NumeroPanetti");
+    const gPan = document.getElementById("gPan");
+    const gVal = document.getElementById("val");
+    const FTota = document.getElementById("fTotal");
+    const nDough = document.getElementById("numPan");
+
+
+    const fBiga = document.getElementsByClassName("farBiga");
+    const hBiga = document.getElementsByClassName("acqBiga");
+    const lBiga = document.getElementsByClassName("lievBiga");
+
+    const fAutol = document.getElementsByClassName("farIdrol");
+    const hAutol = document.getElementsByClassName("acqIdrol");
+
+    const salt = document.getElementsByClassName("salt");
+    const water = document.getElementsByClassName("water");
+
+    const np=document.getElementById("np");
+    const pv=document.getElementById("pv");
+
+    fTot();
+
+    gPan.addEventListener("input", () => {
+        gVal.textContent = gPan.value;
+        fTot()
+    })
+    slider.addEventListener("input", () => {
+        hidr.textContent = slider.value;
+        fTot()
+    })
+    nPan.addEventListener("input", () => {
+        if (nPan.value > 15)
+            nPan.value = 15;
+        if (nPan.value < 0)
+            nPan.value = 1;
+        nDough.textContent = nPan.value;
+        fTot()
+    })
+
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+
+    function fTot() {
+        const result = (nPan.value * gPan.value) / (1.025 + (slider.value / 100));
+        FTota.textContent = result.toString();
+        FTota.style.display = "none";
+        for (i = 0; i < fBiga.length; i++)
+            fBiga[i].textContent = Math.round(result / 2).toString();
+        for (i = 0; i < hBiga.length; i++)
+            hBiga[i].textContent = Math.round(result / 4).toString();
+        for (i = 0; i < fAutol.length; i++)
+            fAutol[i].textContent = Math.round(result / 2).toString();
+        for (i = 0; i < hAutol.length; i++)
+            hAutol[i].textContent = Math.round(result / 4).toString();
+        for (i = 0; i < lBiga.length; i++)
+            lBiga[i].textContent = (result * 0.005).toFixed(1).toString();
+        for (i = 0; i < salt.length; i++)
+            salt[i].textContent = Math.round(result * 0.02).toString();
+        for (i = 0; i < water.length; i++)
+            water[i].textContent = Math.round(result * (slider.value / 100 - 0.5)).toString();
+        np.textContent=nPan.value.toString();
+        pv.textContent=gPan.value.toString();
+    }
+</script>
+</html>
